@@ -34,8 +34,8 @@ def main():
 
 
 
-schedule.every().day.at("9:00").do(main)
-schedule.every().day.at("15:57").do(main)
+schedule.every().day.at("09:00").do(main)
+schedule.every().day.at("16:07").do(main)
 schedule.every().day.at("18:00").do(main)
 
 while True:
