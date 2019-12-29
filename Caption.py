@@ -8,5 +8,5 @@ class Caption:
 
 	def get_body(self, file_name):
 		texts = [text.strip() for text in open(file_name)]
-		idx = random.randint(0, len(texts))
+		idx = random.randint(0, len(texts)-1)
 		return texts[idx] 
