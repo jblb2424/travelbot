@@ -1,0 +1,17 @@
+autoit==0.1
+certifi==2019.11.28
+chardet==3.0.4
+chromedriver==2.24.1
+heroku==0.1.4
+idna==2.8
+Pillow==6.2.1
+praw==6.4.0
+prawcore==1.0.1
+python-dateutil==1.5
+requests==2.22.0
+schedule==0.6.0
+selenium==3.141.0
+six==1.13.0
+update-checker==0.16
+urllib3==1.25.7
+websocket-client==0.57.0
