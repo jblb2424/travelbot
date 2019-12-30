@@ -66,18 +66,18 @@ class InstagramBot:
 
 	def __login(self):
 		self.driver.get('https://www.instagram.com/accounts/login/')
-		time.sleep(2)
+		time.sleep(5)
 		form = self.driver.find_element_by_tag_name('form')
 		self.driver.find_elements_by_tag_name('input')[0].send_keys(self.username)
 		self.driver.find_elements_by_tag_name('input')[1].send_keys(self.password)
 		form.submit()
-		time.sleep(2)
+		time.sleep(5)
 		cancel_again = self.driver.find_element_by_class_name("GAMXX")
 		cancel_again.click()
-		time.sleep(2)
+		time.sleep(5)
 		omg_not_another_cancel = self.driver.find_element_by_class_name("aOOlW")
 		omg_not_another_cancel.click()
-		time.sleep(2)
+		time.sleep(5)
 
 	def __post(self):
 		new_post = self.driver.find_element_by_class_name("q02Nz")
@@ -91,10 +91,10 @@ class InstagramBot:
 		except:
 			self.driver.get('https://www.instagram.com/accounts/login/')
 			self.__post()
-		time.sleep(2)
+		time.sleep(5)
 		caption_field = self.driver.find_element_by_xpath("//textarea[@aria-label='Write a caption…']")
 		caption_field.send_keys(self.caption)
-		time.sleep(2)
+		time.sleep(5)
 		share_btn = self.driver.find_element_by_xpath("//button[contains(text(),'Share')]").click()
 		time.sleep(5)
 		self.driver.close()
