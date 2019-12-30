@@ -75,9 +75,10 @@ class InstagramBot:
 		cancel_again = self.driver.find_element_by_class_name("GAMXX")
 		cancel_again.click()
 		time.sleep(5)
-		omg_not_another_cancel = self.driver.find_element_by_class_name("aOOlW")
-		omg_not_another_cancel.click()
+		# omg_not_another_cancel = self.driver.find_element_by_class_name("aOOlW")
+		# omg_not_another_cancel.click()
 		time.sleep(5)
+		print('logged in')
 
 	def __post(self):
 		new_post = self.driver.find_element_by_class_name("q02Nz")
