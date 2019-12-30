@@ -33,10 +33,11 @@ def main():
 
 
 
-
-schedule.every().day.at("09:00").do(main)
-schedule.every().day.at("01:13").do(main)
-schedule.every().day.at("08:13").do(main)
+#Heroku time is EST +5 HOURS
+schedule.every().day.at("14:00").do(main)
+schedule.every().day.at("19:00").do(main)
+schedule.every().day.at("23:00").do(main)
+schedule.every().day.at("01:00").do(main)
 
 while True:
     schedule.run_pending()
