@@ -35,8 +35,8 @@ def main():
 
 
 schedule.every().day.at("09:00").do(main)
-schedule.every().day.at("01:06").do(main)
-schedule.every().day.at("08:06").do(main)
+schedule.every().day.at("01:13").do(main)
+schedule.every().day.at("08:13").do(main)
 
 while True:
     schedule.run_pending()

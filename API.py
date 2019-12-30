@@ -81,6 +81,7 @@ class InstagramBot:
 		print('logged in')
 
 	def __post(self):
+		print('attempting to post')
 		new_post = self.driver.find_element_by_class_name("q02Nz")
 		new_post.click()
 		time.sleep(4)
@@ -97,6 +98,7 @@ class InstagramBot:
 		caption_field.send_keys(self.caption)
 		time.sleep(5)
 		share_btn = self.driver.find_element_by_xpath("//button[contains(text(),'Share')]").click()
+		print('Successfully Posted!')
 		time.sleep(5)
 		self.driver.close()
 
