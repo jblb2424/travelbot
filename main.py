@@ -32,7 +32,8 @@ def main():
 	bot = InstagramBot(image = "memeImage.jpg", caption = caption.text)
 	bot.execute()
 
-main()
+
+
 # r1 = random.randint(59)
 # r2 = random.randint(59)
 # r3 = random.randint(59)
