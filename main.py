@@ -5,9 +5,10 @@ import urllib.request
 import requests
 import schedule
 import time
+import random
 
 def getMeme(reddit):
-	memes = reddit.fetch_submissions('memeSubreddits.txt')
+	memes = reddit.fetch_submissions('memeMeta/memeSubreddits.txt')
 	meme= memes[0]
 	image = urllib.request.urlopen(meme.url)
 	Picture_request = requests.get(meme.url)
@@ -21,7 +22,7 @@ def main():
 	reddit = Reddit()
 	selectedMeme=getMeme(reddit)
 	submission_validator = SubmissionValidator()
-	caption = Caption("memeHashtags.txt", "memeCaptions.txt")
+	caption = Caption("memeMeta/memeHashtags.txt", "memeMeta/memeCaptions.txt")
 	is_valid_size = submission_validator.is_correct_image_size(selectedMeme)
 	while not is_valid_size: 
 		print("No good: Fetching new meme")
@@ -31,8 +32,11 @@ def main():
 	bot = InstagramBot(image = "memeImage.jpg", caption = caption.text)
 	bot.execute()
 
-
-
+main()
+# r1 = random.randint(59)
+# r2 = random.randint(59)
+# r3 = random.randint(59)
+# r4 = random.randint(59)
 #Heroku time is EST +5 HOURS
 schedule.every().day.at("14:00").do(main)
 schedule.every().day.at("19:00").do(main)

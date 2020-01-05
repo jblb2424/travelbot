@@ -11,7 +11,7 @@ class SubmissionValidator:
 		print(width)
 		print(height)
 		for valid_ratio in self.valid_aspect_ratios:
-			if abs(aspect_ratio - valid_ratio) < .2: return True
+			if abs(aspect_ratio - valid_ratio) < .1: return True
 		return False
 	
 	def is_funny(self):
