@@ -17,6 +17,14 @@ def getMeme(reddit):
 			f.write(Picture_request.content)
 	return image
 
+def randomFollow(file_name):
+	accounts =  [account.strip() for account in open(file_name)]
+	idx = random.randint(0, len(accounts)-1)
+	account = accounts[idx]
+	bot = InstagramBot()
+	bot.follow(account, "memeMeta/followerMeta.csv")
+
+
 def main():
 	print('Retrieving post')
 	reddit = Reddit()
@@ -32,8 +40,6 @@ def main():
 	bot = InstagramBot(image = "memeImage.jpg", caption = caption.text)
 	bot.execute()
 
-
-
 # r1 = random.randint(59)
 # r2 = random.randint(59)
 # r3 = random.randint(59)
@@ -43,6 +49,7 @@ schedule.every().day.at("14:00").do(main)
 schedule.every().day.at("19:00").do(main)
 schedule.every().day.at("23:00").do(main)
 schedule.every().day.at("01:00").do(main)
+randomFollow("memeMeta/memeAccounts.txt")
 
 while True:
     schedule.run_pending()
