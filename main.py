@@ -49,7 +49,7 @@ schedule.every().day.at("14:00").do(main)
 schedule.every().day.at("19:00").do(main)
 schedule.every().day.at("23:00").do(main)
 schedule.every().day.at("01:00").do(main)
-randomFollow("memeMeta/memeAccounts.txt")
+# randomFollow("memeMeta/memeAccounts.txt")
 
 while True:
     schedule.run_pending()
