@@ -7,9 +7,6 @@ class SubmissionValidator:
 	def is_correct_image_size(self, image):
 		width, height = Image.open(image).size
 		aspect_ratio = width / height
-		print(aspect_ratio)
-		print(width)
-		print(height)
 		for valid_ratio in self.valid_aspect_ratios:
 			if abs(aspect_ratio - valid_ratio) < .1: return True
 		return False
